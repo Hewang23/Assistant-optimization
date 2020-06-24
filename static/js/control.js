@@ -14,7 +14,7 @@ function get_time() {
 function get_info() {
     $.ajax({
         url: '/info',
-        type: 'get',
+        type: 'post',  // !!!!!
         timeout: '10000',
         success:function (data) {
            // 更新内容

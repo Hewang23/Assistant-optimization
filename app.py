@@ -20,23 +20,18 @@ def update_time():
 
 
 @app.route('/info')
-def update_info():
-    data = utils.database.get_refined_data()
-    return 1
+def up_date_info():
+    sentence = utils.database.get_raw_data()
+    order = utils.nlp.process(sentence)
+    utils.database.save_refined_data(sentence, order)
+    # merge....
+    return jsonify({'demand': sentence, 'order': order})
 
 
 # 页面左下角功能待定
+# 目前暂时决定为模拟的实时服务器参数，实现在utils.sim_server中
 @app.route('/left-bottom')
 def update_lb():
-    return 1
-
-
-# 后端主循环待定
-@app.route('/backend_loop')
-def backend():
-    subject, data = utils.database.get_raw_date()
-    orders = utils.nlp.process(data)
-    # merge....
     return 1
 
 
