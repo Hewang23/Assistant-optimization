@@ -1,11 +1,12 @@
 import pymysql
+import time
 
 
 def get_conn():
-    conn = pymysql.connect(host='',
-                           user='',
-                           password='',
-                           db='')
+    conn = pymysql.connect(host='127.0.0.1',
+                           user='root',
+                           password='987654321.',
+                           db='refinement')
     cursor = conn.cursor()
     return conn, cursor
 
@@ -53,5 +54,16 @@ def save_refined_data(demand, order):
 输出：最新一批数据（主键update_time最大）
 """
 def get_refined_data():
-    # 暂时不用
-    return 1
+    sql = 'select update_time,' \
+          'frontend, ' \
+          'backend1, ' \
+          'backend2, ' \
+          'reject ' \
+          'from servers ' \
+          'order by update_time desc limit 15'
+    result = query(sql)
+    return result
+
+
+if __name__ == '__main__':
+    result = get_refined_data()
