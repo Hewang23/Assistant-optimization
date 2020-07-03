@@ -24,11 +24,10 @@ def update_time():
 #
 @app.route('/info')
 def update_info():
-    # sentence = utils.database.get_raw_data()
+    # sentence 为用户输入
     tim = time.get_time()
     order = nlp.process(sentence)
     database.save_refined_data(tim, sentence, order)
-    # merge....
     return jsonify({'time': tim, 'demand': sentence, 'order': order})
 
 
