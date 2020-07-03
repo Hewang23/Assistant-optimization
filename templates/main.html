@@ -4,16 +4,27 @@
     <meta charset="UTF-8">
     <title>main</title>
     <link href="../static/css/main_.css" rel="stylesheet">
-    <script src="../static/js/jquery.min.js"></script>
-    <script src="../static/js/echarts.min.js"></script>
-    <link href="../static/css/main_.css" rel="stylesheet">
+	<!-- <script src="../static/js/jquery-1.11.1.min.js"></script> -->
+	<script src="../static/js/echarts.min.js"></script>
+	<script src="../static/js/jquery-1.11.0.js"></script>
 </head>
-<body id="body">
-<div id="title">标题</div>
-<div id="time">时间</div>
-<div id="info">主屏</div>
-<div id="chart">折线图</div>
-<script src="../static/js/line_chart.js"></script>
+<body>
+<div id="title">需求精化系统</div>
+<div id="time">时间显示</div>
+<div id="key">
+	命令行输入：<input type="text" id="content" />
+	<input type="submit" id="sendmsg">
+</div>
+<div id="info"></div>
+    <div id="history_time">时间</div>
+	<div id="unchecked_content">用户输入</div>
+	<div id="checked_content">建议操作</div>
+<div id="chart">附加</div>
 <script src="../static/js/control.js"></script>
+{#<script src="../static/js/ec_block.js"></script>#}
+<script src="../static/js/line_chart.js"></script>
+<script src="../static/js/ec_info.js"></script>
+<script src="../static/js/ec_key.js"></script>
+
 </body>
 </html>

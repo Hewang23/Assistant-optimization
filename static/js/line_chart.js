@@ -1,4 +1,4 @@
-var lb_map = echarts.init(document.getElementById("chart"), 'dark');
+var lb_map = echarts.init(document.getElementById("chart"), 'light');
 
 lb_option = {
     title: {

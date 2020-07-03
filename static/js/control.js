@@ -17,7 +17,8 @@ function get_info() {
         type: 'post',  // !!!!!
         timeout: '10000',
         success:function (data) {
-           // 更新内容
+            $("#checked_content").append("<br />");
+		    $("#checked_content").append(data);
         },
         error: function (xhr, type, errorThrown) {
         }
@@ -43,5 +44,7 @@ function get_leftbottom() {
     })
 }
 
+get_time()
 get_leftbottom()
+setInterval(get_time, 1000)
 setInterval(get_leftbottom, 1000*2)

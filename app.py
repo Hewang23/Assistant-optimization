@@ -2,8 +2,10 @@ from flask import Flask
 from flask import jsonify
 from datetime import timedelta
 from flask import render_template
-from utils.database import get_refined_data
-from utils.time import get_time
+from utils import database
+from utils import time
+from utils import nlp
+
 
 app = Flask(__name__)
 app.config['SEND_FILE_MAX_AGE_DEFAULT'] = timedelta(seconds=1)
@@ -17,23 +19,24 @@ def start():
 
 @app.route('/time')
 def update_time():
-    return get_time()
+    return time.get_time().format('年', '月', '日')
 
 #
-# @app.route('/info')
-# def update_info():
-#     # sentence = utils.database.get_raw_data()
-#     order = utils.nlp.process(sentence)
-#     utils.database.save_refined_data(sentence, order)
-#     # merge....
-#     return jsonify({'demand': sentence, 'order': order})
+@app.route('/info')
+def update_info():
+    # sentence = utils.database.get_raw_data()
+    tim = time.get_time()
+    order = nlp.process(sentence)
+    database.save_refined_data(tim, sentence, order)
+    # merge....
+    return jsonify({'time': tim, 'demand': sentence, 'order': order})
 
 
 # 页面左下角功能待定
 # 目前暂时决定为模拟的实时服务器参数，实现在utils.sim_server中
 @app.route('/left-bottom')
 def update_lb():
-    result = get_refined_data()
+    result = database.get_server_data()
     time_list = []
     frontend = []
     backend1 = []
