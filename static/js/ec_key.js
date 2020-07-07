@@ -1,6 +1,6 @@
 $(function(){
 	// $("#content").after("<font>*</font>")
-	$("#content").blur(function(){
+	$("#content").keyup(function(){
 		var value = $(this).val();
 		$(".onError").remove();
 		$(".onSuccess").remove();
@@ -9,9 +9,8 @@ $(function(){
 		}else{
 			$(this).parent().append("<span class='onSuccess'>命令行格式正确</span>")
 		}
-	}).focus(function(){
-		$(this).triggerHandler("blur");
-	}).keyup(function(){
-		$(this).triggerHandler("blur");
+	}).blur(function(){
+		$(".onError").remove();
+		$(".onSuccess").remove();
 	});
 });

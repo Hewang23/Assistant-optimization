@@ -1,6 +1,7 @@
 from jieba.analyse import extract_tags
-from utils import database
+import utils
 
+from utils import database
 
 """
 将自然语言按词拆分

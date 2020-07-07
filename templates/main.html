@@ -12,16 +12,34 @@
 <div id="title">需求精化系统</div>
 <div id="time">时间显示</div>
 <div id="key">
-	命令行输入：<input type="text" id="content" />
-	<input type="submit" id="sendmsg">
+    <form  target="nm_iframe">
+            命令行输入：<input type="text" id="content" name="content"/>
+    	    <input type="button" id="sendmsg" name="sendmsg" value="submit">
+        </form>
+        <iframe id="id_iframe" name="nm_iframe" style="display:none;"></iframe>
+
 </div>
-<div id="info"></div>
-    <div id="history_time">时间</div>
-	<div id="unchecked_content">用户输入</div>
-	<div id="checked_content">建议操作</div>
+<div id="info">
+	<table id="commandTable">
+		<tr>
+			<th>时间</th>
+			<th>命令</th>
+			<th>事件</th>
+		</tr>
+		<tr align="center">
+			<td>2020-07-03</td>
+			<td>提高安全性到A级</td>
+			<td>Improve security to level A</td>
+		</tr>
+	</table>
+</div>
+<!--
+{#    <div id="history_time">时间</div>#}
+{#	<div id="unchecked_content">用户输入</div>#}
+{#	<div id="checked_content">建议操作</div>#}
+-->
 <div id="chart">附加</div>
 <script src="../static/js/control.js"></script>
-{#<script src="../static/js/ec_block.js"></script>#}
 <script src="../static/js/line_chart.js"></script>
 <script src="../static/js/ec_info.js"></script>
 <script src="../static/js/ec_key.js"></script>

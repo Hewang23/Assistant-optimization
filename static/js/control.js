@@ -10,22 +10,6 @@ function get_time() {
         }
     })
 }
-
-function get_info() {
-    $.ajax({
-        url: '/info',
-        type: 'post',  // !!!!!
-        timeout: '10000',
-        success:function (data) {
-            $("#checked_content").append("<br />");
-		    $("#checked_content").append(data);
-        },
-        error: function (xhr, type, errorThrown) {
-        }
-    })
-}
-
-// 暂时不用
 function get_leftbottom() {
     $.ajax({
         url: '/left-bottom',
@@ -43,7 +27,19 @@ function get_leftbottom() {
         }
     })
 }
-
+// function get_info() {
+//     $.ajax({
+//         url: '/info',
+//         success:function (data) {
+//                 var tr;
+//                 tr='<td>'+data.time+'</td>'+'<td>'+data.demand+'</td>'+'<td>'+data.order+'</td>'
+//                 $("#commandTable").append('<tr>'+tr+'</tr>')
+//         },
+//         error: function (xhr, type, errorThrown) {
+//         }
+//     })
+// }
+// 暂时不用
 get_time()
 get_leftbottom()
 setInterval(get_time, 1000)

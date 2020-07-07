@@ -7,7 +7,7 @@ import pymysql
 def get_conn():
     conn = pymysql.connect(host='127.0.0.1',
                            user='root',
-                           password='987654321.',
+                           password='mine23',
                            db='refinement')
     cursor = conn.cursor()
     return conn, cursor

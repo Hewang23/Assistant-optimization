@@ -1,0 +1,10 @@
+{
+  "status": 0,
+    "data": [
+        {
+            "time": "2020-03-02 00:01",
+            "command":"提高安全性到S级",
+            "execute": "Improve security to level S"
+        }
+    ]
+}

@@ -2,13 +2,19 @@ var lb_map = echarts.init(document.getElementById("chart"), 'light');
 
 lb_option = {
     title: {
-        text: '服务器负载图'
+        text: '服务器负载图',
+        textStyle: {
+            color: '#fff'          //legend字体颜色
+        }
     },
     tooltip: {
         trigger: 'axis'
     },
     legend: {
-        data: ['前端服务器负载', '后端服务器1负载', '后端服务器2负载', '被拒绝服务数量']
+        data: ['前端服务器负载', '后端服务器1负载', '后端服务器2负载', '被拒绝服务数量'],
+        textStyle: {
+            color: '#fff'          //legend字体颜色
+        }
     },
     grid: {
         left: '3%',
@@ -19,18 +25,45 @@ lb_option = {
     xAxis: {
         type: 'category',
         boundaryGap: false,
-        data: ['周一', '周二', '周三', '周四', '周五', '周六', '周日']
+        data: ['周一', '周二', '周三', '周四', '周五', '周六', '周日'],
+        axisLabel: {
+            show: true,
+            textStyle: {
+                color: '#fff',
+                fontSize: '12'
+            }
+        },
+         axisLine:{
+            lineStyle:{
+                color:'#fff',
+                width:1,   //这里是坐标轴的宽度,可以去掉
+            }
+        },
+
     },
     yAxis: {
         type: 'value',
         splitLine: {
             show: true,
             lineStyle: {
-                color: '#17273B',
+                color: '#f2f7f6',
                 width: 1,
                 type: 'solid'
             }
-        }
+        },
+        axisLabel: {
+            show: true,
+            textStyle: {
+                color: '#fff',
+                fontSize: '12'
+            }
+        },
+         axisLine:{
+            lineStyle:{
+                color:'#fff',
+                width:1,   //这里是坐标轴的宽度,可以去掉
+            }
+        },
     },
     series: [
         {
